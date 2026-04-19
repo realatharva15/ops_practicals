@@ -1,0 +1,17 @@
+# Shell kya hai??
+basically a shell is a program which helps to launch other programs. for eg is we type echo $SHELL , we can view the current shell set as default (zsh for my kali). 
+
+the shell itself cannot directly communicate to the kernel via system calls, but it can launch the programs which are capable of carrying out system calls to the kernel.
+
+for eg, think that the shell is a waiter. the command which we type in is the order. lets say i type ls. the waiter(shell) wont be able to directly make it and bring us the output. it will go to the chef which deals with the ls command (/usr/bin/ls). it will launch it and then the ls binary will make a system call to the kernel which will then result in an output which the shell will bring to us (terminal). thats the most simplified way of how a shell works and what it actually does.
+
+# What these college fuckers want:
+
+1. OS name, OS version, kernel version
+2. Top 10 processes in descending order
+3. Top 10 processes with high memory usage
+4. Current logged username
+5. Current shell, home dir path, OS type, current directory.
+
+all this can be done in one single bash script. lets try to
+cram it in one shell script while having limited knowledge of bash scripting
