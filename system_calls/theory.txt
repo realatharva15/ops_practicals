@@ -1,0 +1,58 @@
+# Directory manipulation commands:
+1. mkdir 
+2. cd 
+3. rmdir
+4. pwd
+
+# File manipulation commands: 
+1. cat
+2. touch
+3. nano/vim (text editors)
+
+# Process Commands
+1. ps
+
+# Permissions 
+1. chmod
+2. chown
+3. chgrp
+
+# Permission symbols and values:
+r - read    (4)
+w - write   (2)
+x - execute (1)
+
+# Permission operators:
++ add permission    (does not care about previous permissions)
+- remove permission 
+= assign permission (it will remove previous permissions if not mentioned)
+
+# User categories:
+u    g   o
+rwx rwx rwx
+
+in octal it will become 777 permission considering r=4,w=2 and x=1
+
+# Text Processing commands:
+
+1. sort (used to sort the data in files either alphabetically(default) or numerically(by using the -n flag)
+2. grep (used to find certain strings within a file)
+3. awk (this one was a pain in the ass trying to grasp but hey i got bluewhale)
+
+# File: users.txt
+john:password123:1000
+jane:secret456:1001
+bob:hackme789:1002
+
+# Extract just the usernames (column 1, where : is the separator)
+awk -F: '{ print $1 }' users.txt
+
+# Output:
+john
+jane
+bob
+
+here the -F flag is very important as it tells awk that to treat ":" as a seperator of the columns. $1 represents the first column which has been determined by the ":" separator.
+
+$2 would represent the 2nd column which is the passwords of the users.
+the last column would be represented by $NF 
