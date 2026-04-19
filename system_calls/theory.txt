@@ -56,3 +56,43 @@ here the -F flag is very important as it tells awk that to treat ":" as a sepera
 
 $2 would represent the 2nd column which is the passwords of the users.
 the last column would be represented by $NF 
+
+
+# Child - Parent process ka Randi Rona
+
+so a child process is created using a system call - fork(). 
+
+fork is basically a xerox machine which creates ditto copies
+of parent processes. the copies are called as child processes
+
+child processes are literally identical to the parent process, 
+but both are completely independent i.e any changes made to the
+parent process would not affect the child process (unlike inheritance in OOP)
+
+the most critical thing to notice here is that the child process
+will have a ppid which is the pid of the parent process
+
+eg. if the pid of the parent process is 1001, then the ppid of 
+the child process will also be 1001.
+
+when a parent process dies, the child process becomes an orphan 
+process. it cannot hold the dead parent's ppid, which it has to 
+drop.
+
+here the init process comes into play which thereby adopts the 
+child process and assigns the ppid as 1 to the child process
+
+init is the grandfather of all processes (pid =1)
+
+but if the child process dies first then it becomes a zombie 
+process. the child process remains in the zombie state until
+the parent exits or calls wait() system call
+
+# Fork you bitch:
+
+there are 3 return values of fork. 
+
+1. < 0 (negative value = fork fail)
+2.   0   (child process)
+3. > 0 (parent process)
+                        
